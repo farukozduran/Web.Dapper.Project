@@ -13,14 +13,14 @@ namespace Web.Dapper.Project.MVC.Controllers
             _customerRepo = customerRepo;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var customers = _customerRepo.GetAllAsync();
             return View(customers);
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             return View();
         }
