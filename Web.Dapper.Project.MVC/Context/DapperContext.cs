@@ -50,6 +50,12 @@ namespace Web.Dapper.Project.MVC.Context
             }
         }
 
-        // TO-DO
+        public async Task<T> ExecuteScalarAsync<T>(string spName, DynamicParameters parameters)
+        {
+            using (var conn = CreateConnection())
+            {
+                return await conn.ExecuteScalarAsync<T>(spName, parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }
