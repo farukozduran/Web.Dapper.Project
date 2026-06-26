@@ -1,11 +1,12 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Web.Dapper.Project.MVC.Context;
+using Web.Dapper.Project.MVC.Data.Interfaces;
 using Web.Dapper.Project.MVC.Models;
 
-namespace Web.Dapper.Project.MVC.Repositories
+namespace Web.Dapper.Project.MVC.Data.Repositories
 {
-    public class CustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         private readonly DapperContext _context;
 

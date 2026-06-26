@@ -1,10 +1,11 @@
 ﻿using Dapper;
 using Web.Dapper.Project.MVC.Context;
+using Web.Dapper.Project.MVC.Data.Interfaces;
 using Web.Dapper.Project.MVC.Models;
 
-namespace Web.Dapper.Project.MVC.Repositories
+namespace Web.Dapper.Project.MVC.Data.Repositories
 {
-    public class AccountRepository
+    public class AccountRepository : IAccountRepository
     {
         private readonly DapperContext _context;
 
